@@ -1,7 +1,7 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ theme, toggleTheme }) {
   return (
     <header className='header'>
       <div className='header-container'>
@@ -13,6 +13,14 @@ function Header() {
           <Link to='/'>Início</Link>
           <Link to='/produtos'>Produtos</Link>
           <Link to='/carrinho'>🛒 Carrinho</Link>
+
+          <button
+            className='theme-button'
+            onClick={toggleTheme}
+            aria-label='Alternar tema'
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
         </nav>
       </div>
     </header>

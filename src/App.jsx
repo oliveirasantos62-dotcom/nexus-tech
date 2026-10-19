@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
@@ -9,12 +9,27 @@ import Cart from './pages/Cart/Cart';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
+import './App.css';
+
 function App() {
   const [cart, setCart] = useState([]);
 
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
+  }
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header theme={theme} toggleTheme={toggleTheme} />
 
       <main>
         <Routes>
