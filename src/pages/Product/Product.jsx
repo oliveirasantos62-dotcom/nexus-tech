@@ -4,7 +4,7 @@ import products from '../../data/products';
 
 import './Product.css';
 
-function Product() {
+function Product({ cart, setCart }) {
   const { id } = useParams();
 
   const product = products.find((product) => product.id === Number(id));
@@ -13,9 +13,20 @@ function Product() {
     return (
       <section className='product-not-found'>
         <h1>Produto não encontrado</h1>
+
         <p>O produto que você procura não existe.</p>
       </section>
     );
+  }
+
+  function addToCart() {
+    const alreadyInCart = cart.some((item) => item.id === product.id);
+
+    if (alreadyInCart) {
+      return;
+    }
+
+    setCart([...cart, product]);
   }
 
   return (
@@ -37,15 +48,9 @@ function Product() {
             desempenho, praticidade e excelente experiência.
           </p>
 
-          <div className='product-quantity'>
-            <button>-</button>
-
-            <span>1</span>
-
-            <button>+</button>
-          </div>
-
-          <button className='add-cart'>Adicionar ao carrinho</button>
+          <button className='add-cart' onClick={addToCart}>
+            Adicionar ao carrinho
+          </button>
         </div>
       </div>
     </main>

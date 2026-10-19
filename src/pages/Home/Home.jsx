@@ -1,18 +1,20 @@
+import './Home.css';
 import Banner from '../../components/Banner/Banner';
 import CategoryCard from '../../components/CategoryCard/CategoryCard';
 import ProductCard from '../../components/ProductCard/ProductCard';
-
-import './Home.css';
+import products from '../../data/products';
 
 function Home() {
+  const featuredProducts = products.slice(0, 4);
+
   return (
-    <div className='home'>
+    <main className='home'>
       <Banner />
 
-      <section className='home-section'>
+      <section className='categories-section'>
         <h2>Categorias</h2>
 
-        <div className='categories'>
+        <div className='categories-grid'>
           <CategoryCard title='Notebooks' />
           <CategoryCard title='Smartphones' />
           <CategoryCard title='Monitores' />
@@ -20,20 +22,16 @@ function Home() {
         </div>
       </section>
 
-      <section className='home-section'>
+      <section className='products-section'>
         <h2>Produtos em destaque</h2>
 
         <div className='products-grid'>
-          <ProductCard name='Notebook Nexus Pro' price='R$ 4.999,90' />
-
-          <ProductCard name='Smartphone Nexus X' price='R$ 2.499,90' />
-
-          <ProductCard name='Monitor Nexus 27' price='R$ 1.299,90' />
-
-          <ProductCard name='Teclado Nexus RGB' price='R$ 299,90' />
+          {featuredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </section>
-    </div>
+    </main>
   );
 }
 
