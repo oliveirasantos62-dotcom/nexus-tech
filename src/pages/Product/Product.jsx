@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom';
-
 import products from '../../data/products';
-
 import './Product.css';
 
 function Product({ cart, setCart }) {
@@ -13,26 +11,41 @@ function Product({ cart, setCart }) {
     return (
       <section className='product-not-found'>
         <h1>Produto não encontrado</h1>
-
         <p>O produto que você procura não existe.</p>
       </section>
     );
   }
 
   function addToCart() {
-    const alreadyInCart = cart.some((item) => item.id === product.id);
+    const existingProduct = cart.find((item) => item.id === product.id);
 
-    if (alreadyInCart) {
+    if (existingProduct) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        ),
+      );
+
       return;
     }
 
-    setCart([...cart, product]);
+    setCart([
+      ...cart,
+      {
+        ...product,
+        quantity: 1,
+      },
+    ]);
   }
 
   return (
     <main className='product-page'>
       <div className='product-detail'>
-        <div className='product-detail-image'>{product.image}</div>
+        <div className='product-detail-image'>
+          <img src={product.image} alt={product.name} />
+        </div>
 
         <div className='product-detail-info'>
           <p className='product-detail-category'>{product.category}</p>
