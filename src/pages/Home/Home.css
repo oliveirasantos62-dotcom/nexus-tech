@@ -1,0 +1,31 @@
+.home {
+  width: 100%;
+}
+
+.home-section {
+  max-width: 1200px;
+
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.home-section h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.categories {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.products-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
