@@ -1,16 +1,68 @@
-# React + Vite
+# Nexus Tech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce desenvolvido em React como projeto final do curso de Front-End.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O Nexus Tech é uma loja virtual de tecnologia com catálogo de produtos, busca, categorias, página de detalhes e carrinho de compras.
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- React Router
+- CSS
+- Vite
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Página inicial
+- Catálogo de produtos
+- Busca de produtos
+- Filtro por categoria
+- Página de detalhes do produto
+- Carrinho de compras
+- Remoção de produtos do carrinho
+- Cálculo do total
+- Layout responsivo
+
+## Estrutura
+
+src/
+├── assets/
+│ └── products/
+├── components/
+│ ├── Banner/
+│ ├── CategoryCard/
+│ ├── Footer/
+│ ├── Header/
+│ └── ProductCard/
+├── data/
+│ └── products.js
+├── pages/
+│ ├── Cart/
+│ ├── Home/
+│ ├── Product/
+│ └── Products/
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+
+## Como executar
+
+Instale as dependências:
+
+npm install
+
+Execute o projeto:
+
+npm run dev
+
+Depois acesse:
+
+http://localhost:5173
+
+## Objetivo
+
+Projeto desenvolvido para aplicar conceitos de desenvolvimento Front-End, incluindo componentes, props, estado, rotas, renderização de listas, filtros e responsividade.
