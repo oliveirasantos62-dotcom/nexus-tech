@@ -44,22 +44,21 @@
 }
 
 .theme-button {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background-color: var(--surface);
   color: var(--text);
   cursor: pointer;
   font-size: 17px;
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .theme-button:hover {
   border-color: var(--primary);
-  transform: rotate(10deg);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.15);
 }
 
 @media (max-width: 600px) {

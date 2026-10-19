@@ -1,17 +1,23 @@
 .banner {
   max-width: 1200px;
-  min-height: 420px;
+  min-height: 400px;
   margin: 40px auto 0;
   padding: 60px;
   display: flex;
   align-items: center;
   border-radius: 20px;
-  background: linear-gradient(135deg, #111827, #172554);
+  background:
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(59, 130, 246, 0.25),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #111827, #172554);
   overflow: hidden;
 }
 
 .banner-content {
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .banner-label {
@@ -27,6 +33,8 @@
   color: #ffffff;
   font-size: 52px;
   line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.5px;
 }
 
 .banner-description {
@@ -40,7 +48,7 @@
   display: inline-block;
   padding: 14px 24px;
   border-radius: 8px;
-  background-color: var(--primary);
+  background-color: #3b82f6;
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
@@ -50,7 +58,7 @@
 }
 
 .banner-button:hover {
-  background-color: var(--primary-dark);
+  background-color: #2563eb;
   transform: translateY(-2px);
 }
 
