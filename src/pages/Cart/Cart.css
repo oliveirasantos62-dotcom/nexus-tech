@@ -165,3 +165,21 @@
 
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item > button {
+    width: 100%;
+  }
+}

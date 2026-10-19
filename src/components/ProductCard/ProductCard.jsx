@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom';
-
 import './ProductCard.css';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   return (
     <article className='product-card'>
-      <div className='product-image'>{product.image}</div>
+      <div className='product-image'>
+        <img src={product.image} alt={product.name} />
+      </div>
 
       <div className='product-info'>
         <p className='product-category'>{product.category}</p>
