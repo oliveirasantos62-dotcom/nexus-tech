@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import products from '../../data/products';
@@ -8,38 +7,28 @@ function Products() {
   const [searchParams] = useSearchParams();
 
   const categoria = searchParams.get('categoria');
-
-  const [search, setSearch] = useState('');
+  const busca = searchParams.get('busca') || '';
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory = !categoria || product.category === categoria;
 
     const matchesSearch = product.name
       .toLowerCase()
-      .includes(search.toLowerCase());
+      .includes(busca.toLowerCase());
 
     return matchesCategory && matchesSearch;
   });
 
   return (
     <main className='products-page'>
-      <h1>Produtos</h1>
+      <div className='products-top'>
+        <h1>{categoria || 'Todos os produtos'}</h1>
 
-      <p>Encontre o produto ideal para você.</p>
-
-      <input
-        type='text'
-        className='products-search'
-        placeholder='Buscar produto...'
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-      />
-
-      {categoria && (
-        <p>
-          Categoria: <strong>{categoria}</strong>
-        </p>
-      )}
+        <span>
+          {filteredProducts.length}{' '}
+          {filteredProducts.length === 1 ? 'produto' : 'produtos'}
+        </span>
+      </div>
 
       <div className='products-grid'>
         {filteredProducts.length > 0 ? (
@@ -47,7 +36,11 @@ function Products() {
             <ProductCard key={product.id} product={product} />
           ))
         ) : (
-          <p className='no-products'>Nenhum produto encontrado.</p>
+          <div className='no-products'>
+            <h2>Nenhum produto encontrado</h2>
+
+            <p>Tente pesquisar outro produto.</p>
+          </div>
         )}
       </div>
     </main>

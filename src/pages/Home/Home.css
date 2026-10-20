@@ -5,17 +5,17 @@
 .categories-section,
 .products-section {
   max-width: 1200px;
-  margin: 70px auto;
+  margin: 85px auto;
   padding: 0 20px;
 }
 
 .categories-section h2,
 .products-section h2 {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   color: var(--text);
   font-size: 30px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.7px;
 }
 
 .categories-grid {
@@ -40,7 +40,7 @@
 @media (max-width: 500px) {
   .categories-section,
   .products-section {
-    margin: 45px auto;
+    margin: 55px auto;
     padding: 0 16px;
   }
 

@@ -1,42 +1,48 @@
 .category-card {
-  min-height: 170px;
-  padding: 24px;
+  min-height: 190px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  cursor: pointer;
-  text-decoration: none;
+  border-radius: 16px;
   color: var(--text);
+  text-decoration: none;
   transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   border-color: var(--primary);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .category-icon {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 16px;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
+  border-radius: 18px;
   background-color: #eff6ff;
-  font-size: 34px;
+  font-size: 38px;
+  transition: transform 0.25s ease;
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.08);
 }
 
 .category-card h3 {
+  margin: 0;
   color: var(--text);
   font-size: 17px;
+  font-weight: 700;
   text-align: center;
 }

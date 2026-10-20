@@ -10,16 +10,34 @@ function Banner() {
         <h1>
           Tecnologia para o
           <br />
-          próximo nível
+          próximo nível.
         </h1>
 
         <p className='banner-description'>
-          Encontre produtos tecnológicos para montar o setup ideal.
+          Descubra produtos para transformar seu setup.
         </p>
 
         <Link to='/produtos' className='banner-button'>
-          Ver produtos
+          Comprar agora
         </Link>
+      </div>
+
+      <div className='banner-visual'>
+        <div className='banner-circle'></div>
+
+        <div className='banner-device'>
+          <div className='laptop-screen'>
+            <div className='laptop-display'>
+              <div className='display-line'></div>
+              <div className='display-line short'></div>
+              <div className='display-card'></div>
+            </div>
+          </div>
+
+          <div className='laptop-base'>
+            <div className='laptop-keyboard'></div>
+          </div>
+        </div>
       </div>
     </section>
   );

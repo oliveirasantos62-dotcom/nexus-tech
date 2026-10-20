@@ -1,35 +1,35 @@
 .product-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   border-color: var(--primary);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .product-image {
-  height: 230px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f1f5f9;
+  background-color: #f5f5f5;
   overflow: hidden;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
+  padding: 24px;
   object-fit: contain;
-  padding: 18px;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
 }
 
 .product-card:hover .product-image img {
@@ -37,21 +37,21 @@
 }
 
 .product-info {
-  padding: 20px;
+  padding: 24px;
 }
 
 .product-category {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--primary);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .product-info h3 {
-  min-height: 44px;
-  margin-bottom: 12px;
+  min-height: 46px;
+  margin-bottom: 14px;
   color: var(--text);
   font-size: 18px;
   font-weight: 700;
@@ -59,25 +59,27 @@
 }
 
 .product-price {
-  margin-bottom: 18px;
-  color: var(--primary);
-  font-size: 21px;
-  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 800;
 }
 
 .product-button {
   display: block;
   width: 100%;
-  padding: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--primary);
   border-radius: 8px;
   background-color: var(--primary);
   color: #ffffff;
   text-align: center;
   text-decoration: none;
+  font-size: 14px;
   font-weight: 700;
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .product-button:hover {
